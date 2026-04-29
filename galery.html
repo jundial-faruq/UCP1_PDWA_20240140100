@@ -3,16 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galeri Multimedia - Tech Community</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; background-color: #f9f9f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; }
+        video, iframe { width: 100%; max-width: 560px; margin-top: 10px; display: block; }
+        button { margin: 10px 5px 0 0; padding: 8px 15px; cursor: pointer; }
+    </style>
 </head>
 <body>
+<div class="container"></div>
     <h1>Galeri Foto</h1>
     <p>Berikut adalah foto dari acara Tech Community terbaru.</p>
-    <img src="OIP.webp" alt="Foto Acara 1" title="Foto Acara 1">
-    <video controls>
-        <source src="Video acara.mp4" type="video/mp4">
- </body> 
-    <link rel="stylesheet" href="https://youtu.be/ebYrEPi3QBg?si=zg8bIu7C8b0womzz">
 
+
+    <img  id="fotoAcara" src="OIP.webp" src="acara.webp" src="acara2.webp">
+    <br>
+    <button onclick="tampilkanInfo()">Info Gambar</button>
+    <button onclick="gantiGambar()">Ganti Gambar</button>
+    <hr>
+
+    <h3>Video YouTube</h3>
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/Nr0NKjcoU8E" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+</iframe>
+    <hr>
+
+    <h3>Audio Penjelasan</h3>
+    <audio id="audioAcara" controls>
+        <source src="Kicau.mp3" type="audio/mpeg">
+        Browser tidak mendukung elemen audio.
+    </audio>
+    <br>
+    <button onclick="putarAudio()">Play Audio</button>
+    <button onclick="hentiAudio()">Pause Audio</button>
+
+    <br><br>
+    <a href="index.html">← Kembali ke Halaman Utama</a>
+</div>
+
+<script>
+
+    function tampilkanInfo() {
+        alert("Ini adalah dokumentasi foto kegiatan Tech Community!");
+    }
+
+    function gantiGambar() {
+        const gambar = document.getElementById('fotoAcara');
+  
+        gambar.src = "https://via.placeholder.com/400x250?text=Gambar+Baru+Terpasang";
+        alert("Gambar berhasil diganti!");
+    }
+
+   
+    const musik = document.getElementById('audioAcara');
+    
+    function putarAudio() {
+        musik.play();
+    }
+
+    function hentiAudio() {
+        musik.pause();
+    }
+</script>
+
+</body> 
+</html>
 
         
